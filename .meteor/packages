@@ -31,7 +31,8 @@ coffeescript
 templating
 service-configuration
 underscore
-
+autopublish
+insecure
 jeremy:geocomplete
 patrickml:braintree
 
