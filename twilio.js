@@ -39,7 +39,6 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   var twilio = Twilio("ACa546052edcae5ae41ba1e2931b4754f3", "39a1d4df7d98776ab7ee44d8239db778");
-
   Meteor.methods({
     makeCall: function(phone, name, order_1, order_2){
       console.log('phone: ' + phone + ' name: ' + name);
@@ -70,7 +69,7 @@ if (Meteor.isServer) {
     action: function() {
       console.log('inside voice/ ' + this.params.name);
 
-      var resp = twilio;
+      var resp = twilio.TwimlResponse();
 
       resp.say('Welcome to Acme Customer Service!')
           .gather({
