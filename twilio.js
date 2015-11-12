@@ -38,7 +38,7 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
-  var twilio = Twilio("ACa546052edcae5ae41ba1e2931b4754f3", "39a1d4df7d98776ab7ee44d8239db778");
+  twilio = Twilio("ACa546052edcae5ae41ba1e2931b4754f3", "39a1d4df7d98776ab7ee44d8239db778");
 
   Meteor.methods({
     makeCall: function(phone, name, order_1, order_2){
@@ -70,14 +70,16 @@ if (Meteor.isServer) {
     action: function() {
       console.log('inside voice/ ' + this.params.name);
 
-      var resp = twilio;
+      var resp = new Twilio.TwimlResponse();
+
+      var self = this;
 
       resp.say('Welcome to Acme Customer Service!')
           .gather({
               timeout:'10',
               finishOnKey:'*'
           }, function() {
-              this.say('Hello' + this.params.name)
+              this.say('Hello ' + self.params.name)
                   .say('Press 1 for customer service')
                   .say('Press 2 for British customer service', { language:'en-gb' });
           });
