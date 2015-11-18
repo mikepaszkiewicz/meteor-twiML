@@ -33,11 +33,6 @@ service-configuration
 underscore
 autopublish
 insecure
-jeremy:geocomplete
-patrickml:braintree
-
-
-
 
 alanning:roles
 aldeed:autoform
@@ -47,32 +42,7 @@ dburles:collection-helpers
 
 abhiaiyer:meteor-twilio
 
-raix:push
-kevohagan:sweetalert
-mdg:geolocation
-dburles:google-maps
 
-
-reywood:publish-composite
-matb33:collection-hooks
-
-brentjanderson:buzz
-ccorcos:transitioner
-edgee:slingshot
-fourseven:scss
-gwendall:body-events
-lepozepo:accounting
-momentjs:moment
-mquandalle:bower
-matteodem:easy-search
-
-fortawesome:fontawesome
-
-mrt:reactive-publish
-chriswessels:hammer
-rubaxa:sortable
-dburles:mongo-collection-instances
-reywood:iron-router-ga
 
 npm-container
 dispatch:phoneformat.js

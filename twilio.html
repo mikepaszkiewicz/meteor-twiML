@@ -3,15 +3,31 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Send a text!</h1>
 
-  {{> hello}}
+  {{> callRunnerToAccept}}
+
+  {{> text}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <input id="phone">
-  <input id="name">
+<template name="text">
+  <button id="textBiz">Text the business!</button>
+    <input id="biz-phone" value="4433869479" placeholder="Biz phone number">
+    <input id="biz-name" value="Alice" placeholder="A, B, or C">
+  <br>
+</template>
 
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="callRunnerToAccept">
+  <button id="callRunner">Send call to runner!</button>
+  <input id="phone" value="4433869479" placeholder="Your phone number">
+  <input id="name" value="Alice" placeholder="Runner name">
+  <br>
+  {{#each people}}
+  <div class="runner__chart-name">{{this.name}}
+    <div class="runner__chart-accepted">Accepted: {{this.acceptedOrder}}</div>
+    <div class="runner__chart-denied">Declined: {{this.deniedOrder}}</div>
+  </div>
+  <br>
+  {{/each}}
+
 </template>
