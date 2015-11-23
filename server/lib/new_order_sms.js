@@ -3,6 +3,7 @@ twilio = Twilio("ACa546052edcae5ae41ba1e2931b4754f3", "39a1d4df7d98776ab7ee44d82
 Router.route('/sms/', {
   where: 'server',
   action: function() {
+    console.log('sms route');
     var textResponse = this.request.query.Body;
     //remove +1 from beginning of sender's phone in request
     var userPhone = this.request.query.From.substr(2);
@@ -32,9 +33,8 @@ Router.route('/sms/', {
       /////
       //i have no fucking idea whats going on for some reason
       else if(textResponse == 'helpme') {
-        var resp = new Twilio.TwimlResponse();
-        resp.sms("Text 0 to decline\nText 1 to accept \nText 'open' or 'close' to start and stop receiving orders\nCall support at: 4433869479 ");
-        console.log(resp);
+        // var resp = new Twilio.TwimlResponse();
+        // resp.sms("Text 0 to decline\nText 1 to accept \nText 'open' or 'close' to start and stop receiving orders\nCall support at: 4433869479 ");
         xml = "<Response><Sms>Text 0 to decline\nText 1 to accept \nText 'open' or 'close' to start and stop receiving orders\nCall support at: 4433869479 </Sms></Response>";
         this.response.writeHead(200, {'Content-Type': 'text/xml'});
         return this.response.end(xml);

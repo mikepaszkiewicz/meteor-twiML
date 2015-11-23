@@ -36,7 +36,7 @@ Router.route('/voice/:name', {
     }
     //
     this.response.writeHead(200, {'Content-Type': 'text/xml'});
-    this.response.end(xml);
+    this.response.end(xmlResponse);
   }
 });
 
